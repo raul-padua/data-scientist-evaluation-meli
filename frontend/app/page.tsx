@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import axios from "axios";
-
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+// Route proxied by Next.js API to avoid CORS/mixed-content
+const API_ENDPOINT = "/api/predict";
 
 const defaultForm = {
   seller_id: "",
@@ -66,7 +66,7 @@ export default function Home() {
     };
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/predict`, payload);
+      const response = await axios.post(API_ENDPOINT, payload);
       setResult(response.data);
     } catch (err: any) {
       const message = err?.response?.data?.detail || "Error invoking prediction API.";
