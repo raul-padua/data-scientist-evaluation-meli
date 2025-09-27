@@ -31,7 +31,6 @@ frontend/.turbo/
 frontend/coverage/
 
 # ML / Experiments
-mlruns/
 frontend/mlruns/
 
 # Large local datasets
@@ -45,5 +44,6 @@ dist/
 logs/
 *.log
 
-# Allow example env file in frontend to be committed
+# Allow local env file in frontend to be committed
 !frontend/.env.example
+!frontend/.env.local
