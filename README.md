@@ -64,7 +64,7 @@ Text-only baselines:
 - TF‑IDF (1–2 grams) + Random Forest: solid baseline.
 - TF‑IDF (1–2 grams, min_df=3) + Logistic Regression (balanced): best text‑only baseline in both CV and hold‑out.
 - BiLSTM + fastText Spanish embeddings (PyTorch, MPS/CUDA): trains and converges; slightly below the TF‑IDF + LogReg baseline while heavier to serve.
-- BETO (Spanish BERT) fine‑tune (optional): implemented with HF `datasets/transformers` after resolving `pyarrow` compatibility.
+- BETO (Spanish BERT) fine‑tune (optional): implemented with HF `datasets/transformers`.
 
 Ensembles:
 - XGBoost variant using TF‑IDF LogReg text score + tabular features.
