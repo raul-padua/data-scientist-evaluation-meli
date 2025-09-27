@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "data-scientist-evaluation-meli",
+  "builds": [
+    { "src": "frontend/package.json", "use": "@vercel/next" }
+  ],
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
+}

@@ -1,0 +1,14 @@
+# Ignore non-frontend assets to speed up Vercel upload
+MLA_100k.jsonlines
+EDA.ipynb
+modeling.ipynb
+models/
+processed/
+backend/
+**/*.ipynb
+
+# Node modules (Vercel runs install)
+frontend/node_modules/
+
+# Misc
+.DS_Store

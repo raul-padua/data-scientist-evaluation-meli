@@ -43,3 +43,6 @@ dist/
 # Logs
 logs/
 *.log
+
+# Allow example env file in frontend to be committed
+!frontend/.env.example
