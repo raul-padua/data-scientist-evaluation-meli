@@ -9,6 +9,15 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // Guard: in Vercel, localhost targets won't work
+  const isVercel = !!process.env.VERCEL;
+  if (isVercel && /^(http:\/\/|https:\/\/)?(localhost|127\.0\.0\.1)/i.test(apiBaseUrl)) {
+    return NextResponse.json(
+      { detail: "API_BASE_URL points to localhost; deploy a public FastAPI URL or use a tunnel." },
+      { status: 500 }
+    );
+  }
+
   try {
     const payload = await req.json();
     const upstream = await fetch(`${apiBaseUrl}/predict`, {
@@ -19,14 +28,25 @@ export async function POST(req: NextRequest) {
     });
 
     const contentType = upstream.headers.get("content-type") || "application/json";
-    const body = contentType.includes("application/json")
-      ? await upstream.json()
-      : await upstream.text();
+    let body: unknown;
+    try {
+      body = contentType.includes("application/json") ? await upstream.json() : await upstream.text();
+    } catch (_) {
+      body = { detail: "Upstream returned invalid response" };
+    }
 
-    // Mirror status from upstream
+    if (!upstream.ok) {
+      return NextResponse.json(
+        typeof body === "object" ? (body as any) : { detail: String(body) },
+        { status: upstream.status }
+      );
+    }
+
+    // Mirror success
     return NextResponse.json(body as any, { status: upstream.status });
-  } catch (error) {
-    return NextResponse.json({ detail: "Proxy error" }, { status: 500 });
+  } catch (error: any) {
+    const message = error?.message || "Proxy error";
+    return NextResponse.json({ detail: message }, { status: 500 });
   }
 }
 
