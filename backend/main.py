@@ -10,8 +10,10 @@ from pydantic import BaseModel
 from sklearn.preprocessing import LabelEncoder
 from fastapi.middleware.cors import CORSMiddleware
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-MODEL_DIR = BASE_DIR / "models"
+CURRENT_DIR = Path(__file__).resolve().parent
+BASE_DIR = CURRENT_DIR.parent
+# Prefer bundled models under backend/models when deployed as a standalone app
+MODEL_DIR = (CURRENT_DIR / "models") if (CURRENT_DIR / "models").exists() else (BASE_DIR / "models")
 
 app = FastAPI(title="Item Condition Predictor")
 
