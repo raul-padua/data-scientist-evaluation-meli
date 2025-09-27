@@ -1,0 +1,33 @@
+{
+  "base_tabular_cols": [
+    "log_price",
+    "price_over_base",
+    "has_original_price",
+    "has_video",
+    "pictures_qty",
+    "shipping_free_shipping",
+    "shipping_local_pick_up",
+    "seller_share_new_smoothed",
+    "seller_total_listings",
+    "title_char_len",
+    "title_word_len",
+    "kw_nuevo",
+    "kw_usado",
+    "kw_seminuevo",
+    "kw_sellado",
+    "kw_garantia"
+  ],
+  "categorical_columns": [
+    "shipping_mode",
+    "listing_type_id",
+    "category_id"
+  ],
+  "text_score_column": "text_score",
+  "tfidf_pipeline_path": "text_tfidf_logreg.joblib",
+  "lightgbm_model_path": "lightgbm_tabular.txt",
+  "encoders_path": "categorical_encoders.joblib",
+  "seller_stats_path": "seller_share_stats.csv",
+  "seller_share_prior": 0.537575,
+  "seller_share_smoothing": 20,
+  "label_encoder_max_categories": 50
+}

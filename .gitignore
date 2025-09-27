@@ -1,0 +1,45 @@
+# OS / Editor
+.DS_Store
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.venv/
+venv/
+.env
+.env.*
+.python-version
+.ipynb_checkpoints/
+.mypy_cache/
+.pytest_cache/
+.coverage
+coverage/
+
+# Node / Next.js (frontend)
+**/node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+frontend/.turbo/
+frontend/coverage/
+
+# ML / Experiments
+mlruns/
+frontend/mlruns/
+
+# Large local datasets
+MLA_100k.jsonlines
+
+# Builds
+build/
+dist/
+
+# Logs
+logs/
+*.log

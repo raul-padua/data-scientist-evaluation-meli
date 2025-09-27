@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f4f4;
+  --foreground: #333333;
+  --meli-primary: #ffe600;
+  --meli-primary-hover: #f7d400;
+  --meli-dark: #333333;
+  --meli-light: #ffffff;
+  --meli-muted: #999999;
+  --meli-border: #e6e6e6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-meli-primary: var(--meli-primary);
+  --color-meli-dark: var(--meli-dark);
+  --color-meli-muted: var(--meli-muted);
+  --font-sans: "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+.meli-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.meli-card {
+  background: var(--meli-light);
+  border-radius: 8px;
+  border: 1px solid var(--meli-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.meli-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--meli-dark);
+}
+
+.meli-subtitle {
+  font-size: 1rem;
+  color: var(--meli-muted);
+}
+
+.button-primary {
+  background: var(--meli-primary);
+  color: var(--meli-dark);
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.button-primary:hover {
+  background: var(--meli-primary-hover);
+}
