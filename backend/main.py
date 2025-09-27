@@ -32,6 +32,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/healthz")
+def healthz():
+    return {"status": "ok"}
+
+@app.get("/")
+def root():
+    return {"message": "Item Condition Predictor API"}
+
 text_pipeline = joblib.load(MODEL_DIR / "text_tfidf_logreg.joblib")
 encoders = joblib.load(MODEL_DIR / "categorical_encoders.joblib")
 seller_stats = pd.read_csv(MODEL_DIR / "seller_share_stats.csv")
