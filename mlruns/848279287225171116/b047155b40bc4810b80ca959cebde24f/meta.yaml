@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/raulsallesdepadua/Documents/Career-Mgmt/MELI/technical_challenge_DS_GenAI/mlruns/848279287225171116/b047155b40bc4810b80ca959cebde24f/artifacts
+end_time: 1758965092046
+entry_point_name: ''
+experiment_id: '848279287225171116'
+lifecycle_stage: active
+run_id: b047155b40bc4810b80ca959cebde24f
+run_name: rf_tfidf_title_baseline
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758965053773
+status: 3
+tags: []
+user_id: raulsallesdepadua

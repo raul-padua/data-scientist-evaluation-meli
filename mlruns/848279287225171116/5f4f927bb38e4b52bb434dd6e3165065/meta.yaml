@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/raulsallesdepadua/Documents/Career-Mgmt/MELI/technical_challenge_DS_GenAI/mlruns/848279287225171116/5f4f927bb38e4b52bb434dd6e3165065/artifacts
+end_time: 1758983916237
+entry_point_name: ''
+experiment_id: '848279287225171116'
+lifecycle_stage: active
+run_id: 5f4f927bb38e4b52bb434dd6e3165065
+run_name: beto_title_finetune
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758979569074
+status: 3
+tags: []
+user_id: raulsallesdepadua
